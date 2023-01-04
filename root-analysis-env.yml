@@ -1,0 +1,6 @@
+name: root-analysis-env
+dependencies:
+  - jupyter
+  - pip
+  - numpy
+  - pandas

@@ -1,0 +1,20 @@
+name: python-analysis-env
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - jupyter
+  - pip
+  - uproot
+  - numpy
+  - h5py
+  - pandas
+  - matplotlib
+  - keras
+  - scikit-learn
+  - awkward
+  - tensorflow
+  - pip:
+    - torch
+    - mplhep
+    - scikit-optimize
