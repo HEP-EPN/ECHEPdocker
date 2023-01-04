@@ -2,7 +2,7 @@ FROM rootproject/root:latest
 
 RUN apt-get update
 RUN apt-get install -y git
-RUN apt-get install -y wget unzip
+RUN apt-get install -y wget tar
 
 RUN wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 RUN bash Miniconda3-latest-Linux-x86_64.sh -b -p /miniconda
@@ -44,7 +44,7 @@ RUN echo 'conda activate python-analysis-env' >> ~/.bashrc
 
 RUN git clone https://github.com/alefisico/machine-learning-das.git /home/${username}/machine-learning-das
 
-RUN wget https://cernbox.cern.ch/remote.php/dav/public-files/MBdDqUTlNiRpuLo/data.tar.gz && unzip data.tar.gz /home/${username}/machine-learning-das/
+RUN wget https://cernbox.cern.ch/remote.php/dav/public-files/MBdDqUTlNiRpuLo/data.tar.gz && tar -xvf data.tar.gz -C /home/${username}/machine-learning-das/ && rm data.tar.gz
 
 CMD ["jupyter", "notebook", "--notebook-dir=.", "--ip=0.0.0.0", "--no-browser"] 
 
